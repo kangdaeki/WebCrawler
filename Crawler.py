@@ -5,7 +5,10 @@ import scrapy
 
 class QuotesSpider(scrapy.Spider):
     name = "Quotes"
-    start_urls = ["https://quotes.toscrape.com/tag/humor/",]
+    start_urls = [
+        "https://quotes.toscrape.com/tag/humor/",
+        "https://quotes.toscrape.com/tag/love/",
+        ]
 
     def parse(self, response):
         for quote in response.css("div.quote"):
